@@ -1,0 +1,75 @@
+:root {
+  --bg: #0b1220;
+  --panel: #131c30;
+  --line: #24304a;
+  --text: #e9eefc;
+  --muted: #8d9bbd;
+  --accent: #5ea1ff;
+  --error: #ff7a8a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #16233f, var(--bg) 60%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.app { max-width: 720px; margin: 0 auto; padding: 32px 16px; }
+
+.top { display: flex; justify-content: space-between; align-items: center; }
+h1 { margin: 0; font-size: 1.8rem; letter-spacing: -0.02em; }
+
+button {
+  padding: 8px 14px;
+  background: var(--accent);
+  color: #08101f;
+  border: 0;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.1); }
+
+.units { display: flex; gap: 4px; }
+.units button { background: var(--line); color: var(--text); }
+.units button.active { background: var(--accent); color: #08101f; }
+
+.search { display: flex; gap: 8px; margin: 24px 0 12px; }
+.search input {
+  flex: 1;
+  padding: 10px 12px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+}
+
+.recent { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.chip { background: var(--panel); color: var(--muted); border: 1px solid var(--line); font-weight: 500; }
+
+.note { color: var(--muted); }
+.note.error { color: var(--error); }
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.current { text-align: center; margin-bottom: 16px; }
+.place { margin: 0; color: var(--muted); }
+.big { font-size: 3.5rem; font-weight: 700; margin: 8px 0; }
+.icon { margin-right: 8px; }
+.stats { list-style: none; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 0; margin: 12px 0 0; color: var(--muted); }
+
+.days { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+@media (max-width: 560px) { .days { grid-template-columns: repeat(2, 1fr); } }
+.day { text-align: center; padding: 14px 8px; }
+.day p { margin: 4px 0; }
+.day .icon { font-size: 1.6rem; margin: 0; }
+.muted { color: var(--muted); }
